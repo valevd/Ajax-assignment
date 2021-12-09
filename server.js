@@ -23,12 +23,12 @@ app.use(cors());
 
 app.get('/data', async (req, res) => {
 	try{
-	const teach		 = await db.all('SELECT * FROM instructor');
+	const professor	 = await db.all('SELECT * FROM instructor');
 	const courses	 = await db.all('SELECT * FROM course');
-	const sections	 = await db.all('SELECT * FROM course_instructor');
-res.json({	teacher : teach,
+	const section	 = await db.all('SELECT * FROM course_instructor');
+res.json({	professor : professor,
 			courses : courses,
-			section : sections
+			section : section
 			});
 		}catch(e){
 			console.log(e);
